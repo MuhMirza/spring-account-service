@@ -1,0 +1,37 @@
+security:
+  oauth2:
+    resource:
+      jwt:
+        key-uri: http://localhost:8080/oauth/token_key
+
+spring:
+  jackson:
+    serialization:
+      indent-output: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/account
+    username: user
+    password: pass
+# Mail Configuration
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: auth.zharver@gmail.com
+    password: penguingame
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enabled: true
+            required: true
+          auth: true
+          connectiontimeout: 5000
+          timemout: 5000
+          writetimeout: 5000
+
+server:
+  port: 8000
+
+upload:
+  data:
+    dir: /home/ciazhar
