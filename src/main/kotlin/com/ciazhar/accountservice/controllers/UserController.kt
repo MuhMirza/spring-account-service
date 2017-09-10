@@ -22,6 +22,7 @@ import javax.validation.Valid
 @RequestMapping("api/user", "/mobile/user")
 class UserController @Autowired constructor(private val service: UserService){
 
+    @PreAuthorize("peritAll()")
     @PostMapping("/register")
     fun register(@RequestBody @Valid form: RegisterForm): ResponseData<*> {
         return service.register(form)
@@ -45,31 +46,37 @@ class UserController @Autowired constructor(private val service: UserService){
         return service.findOne(id)
     }
 
+    @PreAuthorize("hasAuthority('BASIC_USER')")
     @PostMapping("/update")
     fun updateProfile(@Valid @RequestBody form: ProfileForm): ResponseData<*> {
         return service.updateProfile(form)
     }
 
+    @PreAuthorize("hasAuthority('BASIC_USER')")
     @PostMapping("/change-username")
     fun changeUsername(@Valid @RequestBody form: ChangeUsernameForm): ResponseData<*> {
         return service.changeUsername(form)
     }
 
+    @PreAuthorize("hasAuthority('BASIC_USER')")
     @PostMapping("/change-phone")
     fun changePhone(@Valid @RequestBody form: ChangePhoneForm): ResponseData<*> {
         return service.changePhone(form)
     }
 
+    @PreAuthorize("hasAuthority('BASIC_USER')")
     @PostMapping("/change-birthdate")
     fun changeBirthDate(@Valid @RequestBody form: ChangeBirthDateForm): ResponseData<*> {
         return service.changeBirthdate(form)
     }
 
+    @PreAuthorize("hasAuthority('BASIC_USER')")
     @PostMapping("/change-password")
     fun changePassword(@Valid @RequestBody form: ChangePasswordForm): ResponseData<*> {
         return service.changePassword(form)
     }
 
+    @PreAuthorize("hasAuthority('BASIC_USER')")
     @PostMapping("/change-email")
     fun changeEmail(@Valid @RequestBody form: ChangeEmailForm): ResponseData<*> {
         return service.changeEmail(form)
