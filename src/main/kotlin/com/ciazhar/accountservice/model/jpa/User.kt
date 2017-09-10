@@ -44,7 +44,7 @@ data class User (
 
     @field:Email
     @field:NotNull
-    @field:Column(unique = true, length = 30)
+    @field:Column(unique = true, length = 50)
     var email: String? = null,
 
     @field:NotNull
