@@ -29,6 +29,7 @@ class Oauth2Config : ResourceServerConfigurerAdapter() {
                 ?.authorizeRequests()
                 ?.antMatchers("/api/user/register")?.permitAll()
                 ?.antMatchers("/mobile/user/register")?.permitAll()
+                ?.antMatchers("/activate**")?.permitAll()
                 ?.anyRequest()?.authenticated()
                 ?.and()
                 ?.csrf()?.ignoringAntMatchers("/mobile/**")
