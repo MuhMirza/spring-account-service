@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam
 @Controller
 class UserThymeleafController @Autowired constructor(private val service: UserService){
 
-    @PreAuthorize("hasAuthority(BASIC_USER)")
+    @PreAuthorize("permitAll()")
     @RequestMapping("/activate")
     fun activate(@RequestParam(value = "email") email: String, model: Model): String {
         return service.activate(email,model)
