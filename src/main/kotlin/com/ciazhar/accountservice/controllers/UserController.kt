@@ -22,7 +22,7 @@ import javax.validation.Valid
 @RequestMapping("api/user", "/mobile/user")
 class UserController @Autowired constructor(private val service: UserService){
 
-    @PreAuthorize("peritAll()")
+    @PreAuthorize("permitAll()")
     @PostMapping("/register")
     fun register(@RequestBody @Valid form: RegisterForm): ResponseData<*> {
         return service.register(form)
