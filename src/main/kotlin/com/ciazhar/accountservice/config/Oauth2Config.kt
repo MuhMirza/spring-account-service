@@ -26,7 +26,12 @@ class Oauth2Config : ResourceServerConfigurerAdapter() {
 
     override fun configure(http: HttpSecurity?) {
         http
-                ?.authorizeRequests()?.anyRequest()?.authenticated()
+                ?.authorizeRequests()
+                ?.antMatchers("/api/user/register")?.permitAll()
+                ?.antMatchers("/mobile/user/register")?.permitAll()
+                ?.anyRequest()?.authenticated()
+                ?.and()
+                ?.csrf()?.ignoringAntMatchers("/mobile/**")
     }
 
     @Bean
