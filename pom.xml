@@ -63,13 +63,28 @@
 			<version>1.5.6.RELEASE</version>
 		</dependency>
 
-		<!--Util-->
+		<!--MULTIPART-->
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>2.4</version>
 		</dependency>
-		
+
+		<!--API DOCUMENTATION-->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.6.1</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.6.1</version>
+			<scope>compile</scope>
+		</dependency>
+
+
 		<!--KOTLIN-->
 		<dependency>
 			<groupId>org.jetbrains.kotlin</groupId>
