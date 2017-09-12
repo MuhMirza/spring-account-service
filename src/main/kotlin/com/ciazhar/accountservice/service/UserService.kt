@@ -23,7 +23,7 @@ interface UserService {
 
     fun register(form: RegisterForm) : ResponseData<*>
 
-    fun activate(email : String, model : Model):String
+    fun activate(id : String, model : Model):String
 
     fun current(authentication : Authentication) : ResponseData<*>
 

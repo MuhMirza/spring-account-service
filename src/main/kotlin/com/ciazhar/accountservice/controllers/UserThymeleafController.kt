@@ -13,8 +13,8 @@ class UserThymeleafController @Autowired constructor(private val service: UserSe
 
     @PreAuthorize("permitAll()")
     @RequestMapping("/activate")
-    fun activate(@RequestParam(value = "email") email: String, model: Model): String {
-        return service.activate(email,model)
+    fun activate(@RequestParam(value = "a") id: String, model: Model): String {
+        return service.activate(id,model)
     }
 
 }

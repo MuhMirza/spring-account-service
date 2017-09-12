@@ -45,8 +45,8 @@ class UserServiceImpl (private val userRepository: UserRepository,
         return ResponseData(authentication)
     }
 
-    override fun activate(email: String, model: Model): String {
-        val user = userRepository.findByEmail(email)
+    override fun activate(id: String, model: Model): String {
+        val user = userRepository.findOne(id)
 
         model.addAttribute("email", user.email)
         user.enabled = true
